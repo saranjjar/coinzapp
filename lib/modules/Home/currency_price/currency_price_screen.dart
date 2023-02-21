@@ -1,14 +1,10 @@
 
 import 'package:coinz/controller/currency_controller.dart';
-import 'package:coinz/modules/Home/currency_price/currencies_screen.dart';
-import 'package:coinz/modules/Home/currency_price/widgets/gridItem.dart';
 import 'package:coinz/modules/Home/currency_price/widgets/sliver_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:lottie/lottie.dart';
-
-import '../../../Shared/components/components.dart';
 
 class CurrencyPriceScreen extends StatelessWidget {
   CurrencyxController homeController = Get.put(CurrencyxController());
@@ -26,13 +22,15 @@ class CurrencyPriceScreen extends StatelessWidget {
                       buildSliverAppBar(context),
                       // SliverAppBar #1
                       buildSliverAppBarOne(controller),
+                      // SliverAppBar #2
                       buildSliverAppBarTwo(),
                     ];
                   },
                   body: SizedBox(
                       child: controller.isLoadingRequest
                           ? _buildLoading()
-                          : _buildMainBody())));
+                          : _buildMainBody()
+                  )));
         },
       )),
     );
@@ -76,13 +74,17 @@ class CurrencyPriceScreen extends StatelessWidget {
                                   child: Image.network(
                                 '${homeController.listCurrencies[index].sIcon}',
                                 height: 20,
-                                width: 20,
+                                width: 10,
                               )),
                               SizedBox(
-                                width: 5,
+                                width: 2,
                               ),
                               Text(
                                 '${homeController.listCurrencies[index].sName}',
+                                style: TextStyle(
+                                  fontSize: 12
+                                ),
+
                               ),
                             ],
                           ),
@@ -90,15 +92,16 @@ class CurrencyPriceScreen extends StatelessWidget {
                         Expanded(
                           flex: 1,
                           child: Text(
-                            '${('${homeController.listCurrencies[index].dValue}')}',
+                            '${homeController.getValueOfCoinz(index)}'
                           ),
                         ),
                         Expanded(
                             flex: 1,
                             child: Text(
-                                '${homeController.listCurrencies[index].dTrading}',
+                                '${homeController.getTradingOfCoinz(index)}',
                                 style: TextStyle(
-                                  color: Colors.lightGreen,
+                                  color: homeController.getTradingOfCoinz(index).indexOf('.')==-1?
+                                  Colors.green: Colors.red,
                                 )))
                       ],
                     ));

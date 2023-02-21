@@ -1,3 +1,4 @@
+import 'package:coinz/Application/Application.dart';
 import 'package:coinz/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,6 +10,7 @@ import 'modules/splash_screen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
+  Application.init();
 }
 
 class MyApp extends StatelessWidget {

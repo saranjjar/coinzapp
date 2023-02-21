@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../../../Shared/components/components.dart';
 import '../../../../controller/currency_controller.dart';
+import '../../../../utils/utils.dart';
 import '../currencies_screen.dart';
 import 'gridItem.dart';
 
 SliverAppBar buildSliverAppBar(BuildContext context) {
+
+
   return SliverAppBar(
     pinned: false,
     backgroundColor: Colors.white,
@@ -23,15 +26,19 @@ SliverAppBar buildSliverAppBar(BuildContext context) {
                   'أسعار العملات',
                   style: TextStyle(
                       fontSize: 20,
-                      fontWeight: FontWeight.bold),
+                    fontFamily: 'Swissra',
+                  ),
                 ),
                 Row(
                   children: [
-                    Text('آخر تحديث'),
+                    Text('آخر تحديث',style: TextStyle(
+                      fontFamily: 'Swissra',
+                      fontSize: 12
+                    ),),
                     SizedBox(
                       width: 5,
                     ),
-                    Text('7/8/2023'),
+                    Text('$formatter'),
                   ],
                 ),
               ],
@@ -54,6 +61,7 @@ SliverAppBar buildSliverAppBar(BuildContext context) {
 }
 
 SliverAppBar buildSliverAppBarOne(CurrencyxController controller) {
+  List<Widget> favList = [];
   return SliverAppBar(
     pinned: false,
     backgroundColor: Colors.white,
@@ -67,9 +75,9 @@ SliverAppBar buildSliverAppBarOne(CurrencyxController controller) {
         shrinkWrap: true,
         crossAxisSpacing: 10,
         padding: EdgeInsetsDirectional.all(10),
-        children: List.generate(controller.fav.length, (index) {
-          return gridItem(index, controller.fav[index]);
-
+        children: List.generate(controller.fav.length, (index)
+        {
+         return gridItem(index, controller.fav[index]);
         }),
       ),
       // List.generate(
@@ -104,7 +112,9 @@ SliverAppBar buildSliverAppBarTwo() {
                 child: Text(
                   "العملة",
                   style: TextStyle(
-                      fontSize: 18, color: Colors.black),
+                      fontSize: 16, color: Colors.black,
+                      fontFamily: 'Swissra',
+                  ),
                 )),
           ),
           Expanded(
@@ -113,7 +123,9 @@ SliverAppBar buildSliverAppBarTwo() {
                 child: Text(
                   "السعر",
                   style: TextStyle(
-                      fontSize: 18, color: Colors.black),
+                      fontSize: 16, color: Colors.black,
+                    fontFamily: 'Swissra',
+                  ),
                 )),
           ),
           Expanded(
@@ -122,7 +134,9 @@ SliverAppBar buildSliverAppBarTwo() {
                 child: Text(
                   "التداول",
                   style: TextStyle(
-                      fontSize: 18, color: Colors.black),
+                      fontSize: 16, color: Colors.black,
+                    fontFamily: 'Swissra',
+                  ),
                 )),
           ),
         ],

@@ -49,7 +49,7 @@ Widget buildItem(context,index){
                       '${controller.listNews[index].sTitle}',
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: 12,fontFamily: 'Swissra',),
                     ),
                   ),
                   Text(

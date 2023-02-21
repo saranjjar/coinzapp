@@ -7,7 +7,8 @@ import '../model/currency_model.dart';
 class CurrencyxController extends GetxController {
 
    int? index;
-  List<TCurrency> fav = [];
+   List fav = [];
+
 
   getFavoriteCurrency(index){
 
@@ -91,4 +92,24 @@ class CurrencyxController extends GetxController {
     // isLoadingRequest = false;
     update();
   }
+
+   String getValueOfCoinz(int index) {
+     var length = listCurrencies[index].dValue!.length;
+     int indexOfSubString =
+     listCurrencies[index].dValue!.indexOf('.');
+     if (indexOfSubString == -1) {
+       return listCurrencies[index].dValue!;
+     } else {
+       if (length > indexOfSubString + 2) {
+         return listCurrencies[index].dValue!
+             .substring(0, indexOfSubString + 2);
+       } else {
+         return listCurrencies[index].dValue!;
+
+     }
+   }}
+
+   String getTradingOfCoinz(int index) {
+     return listCurrencies[index].dTrading!;
+   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-Widget buildTextButton() {
+Widget buildTextButton({required Function() onPressed}) {
   return Container(
     height: 55,
     width: double.infinity,
@@ -14,7 +14,7 @@ Widget buildTextButton() {
         borderRadius: BorderRadius.circular(12)
     ),
     child: TextButton(
-        onPressed: (){},
+        onPressed: onPressed,
         child: Text('إضافة تنبيه',style: TextStyle(
             color: Colors.black,
             fontSize:18

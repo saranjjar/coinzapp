@@ -1,6 +1,7 @@
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../../Shared/color.dart';
 import '../../../../Shared/components/components.dart';
@@ -19,12 +20,16 @@ class NewsDetails extends StatelessWidget {
           textDirection: TextDirection.rtl,
           child: Scaffold(
             appBar: AppBar(
+              systemOverlayStyle: SystemUiOverlayStyle(
+                statusBarColor: Colors.white,
+                statusBarIconBrightness: Brightness.dark
+              ),
               backgroundColor: Colors.white,
               elevation: 0,
               leading: TextButton(
                 child: const Text(
                   'عودة',
-                  style: TextStyle(fontSize: 18, color: Colors.black),
+                  style: TextStyle(fontSize: 18, color: Colors.black,fontFamily: 'Swissra',),
                 ),
                 onPressed: () {
                   Navigator.pop(context);
@@ -35,7 +40,7 @@ class NewsDetails extends StatelessWidget {
                     onPressed: () {},
                     child: const Text(
                       'مشاركة',
-                      style: TextStyle(fontSize: 18, color: Colors.black),
+                      style: TextStyle(fontSize: 18, color: Colors.black,fontFamily: 'Swissra',),
                     ))
               ],
             ),
@@ -50,13 +55,19 @@ class NewsDetails extends StatelessWidget {
                       children: [
                         Text(
                           '${title}',
+                          style: TextStyle(
+                            fontFamily: 'Swissra',
+                          ),
                         ),
                         const SizedBox(
                           height: 20,
                         ),
                         Text(
                           '${date}',
-                          style: const TextStyle(color: Colors.grey),
+                          style: const TextStyle(
+                              color: Colors.grey,
+                            fontFamily: 'Swissra',
+                          ),
                         ),
                       ],
                     ),
@@ -95,14 +106,14 @@ class NewsDetails extends StatelessWidget {
                                   color: Colors.cyan
                                 ),
                               ),
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                  child: MaterialButton(
-                                    color: offwhite,
-                                    onPressed: (){},child: const Icon(Icons.share,color: Colors.black38,),))
+                              // const SizedBox(
+                              //   width: 15,
+                              // ),
+                              // Expanded(
+                              //   flex: 1,
+                              //     child: MaterialButton(
+                              //       color: offwhite,
+                              //       onPressed: (){},child: const Icon(Icons.share,color: Colors.black38,),))
                             ],
                           ),
                         const SizedBox(

@@ -24,7 +24,10 @@ class NewsScreen extends StatelessWidget {
                 children: [
                   const Text(
                     'أخبار وتقارير',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(
+                        fontSize: 20,
+                      fontFamily: 'Swissra',
+                    ),
                   ),
                   const SizedBox(
                     height: 20,

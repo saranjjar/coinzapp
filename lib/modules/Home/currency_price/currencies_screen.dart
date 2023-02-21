@@ -96,14 +96,14 @@ class CurrenciesScreen extends StatelessWidget {
                   ),
                   trailing: Container(
                     height: 50,
-                    width: 50,
+                    width: 60,
                     decoration: BoxDecoration(
                         color:homeController.fav.contains(homeController.listCurrencies[index])? Colors.red:Colors.green
                     ),
                     child: Center(
                         child: Text(
                             homeController.fav.contains(homeController.listCurrencies[index])?
-                            'remove':'add',style: TextStyle(
+                            'حذف':'اضافة',style: TextStyle(
                           color: Colors.white,
                         ),)),
                   ),

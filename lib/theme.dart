@@ -34,8 +34,14 @@ ThemeData lightTheme =ThemeData(
     showSelectedLabels: true,
     unselectedItemColor: Colors.black.withOpacity(0.5),
     selectedItemColor: Colors.black,
-    unselectedLabelStyle: unselectedLabelStyle,
-    selectedLabelStyle: selectedLabelStyle,
+    unselectedLabelStyle: TextStyle(
+      fontFamily: 'Swissra',
+    ),
+    selectedLabelStyle: TextStyle(
+      fontFamily: 'Swissra',
+      color: Colors.cyan
+    ),
+
 
   ),
 );

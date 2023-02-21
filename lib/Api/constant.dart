@@ -5,5 +5,6 @@ class Constant {
   static const triggerUrl = '/triggers/list';
   static const addtriggerUrl = '/triggers';
   static const newsUrl = '/news/list';
+  static const deleteTriggerUrl = '/triggers';
 
 }

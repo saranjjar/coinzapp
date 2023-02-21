@@ -135,11 +135,12 @@ void printFullText(String text){
   final pattern = RegExp('.{1,800}');
   pattern.allMatches(text).forEach((match) => print(match.group(0)));
 }
-Widget textFormFailed(){
+Widget textFormFailed({TextEditingController? valueController}){
   return Container(
     padding: EdgeInsetsDirectional.zero,
     width: 140,
     child: TextFormField(
+      controller: valueController,
       decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(width: 1,color: Colors.grey),

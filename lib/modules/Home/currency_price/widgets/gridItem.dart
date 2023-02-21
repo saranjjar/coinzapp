@@ -18,18 +18,22 @@ Widget gridItem(index,TCurrency model) {
               color2[index],
             ],
             begin: AlignmentDirectional.topStart,
-            end: AlignmentDirectional.bottomEnd)),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Image.network('${model.sIcon}',height: 25,width: 25,),
-        SizedBox(height: 5,),
-        Text('${model.sName}',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-        SizedBox(height: 5,),
-        Text('${model.dValue}',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)
-      ],
+            end: AlignmentDirectional.bottomEnd
+        )),
+    child: Padding(
+      padding: const EdgeInsets.all(2.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.network('${model.sIcon}',height: 20,width: 20,),
+          SizedBox(height: 5,),
+          Text('${model.sName}',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+          SizedBox(height: 5,),
+          Text('${model.dValue}',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)
+        ],
+      ),
     ),
   );
 }
